@@ -1,0 +1,28 @@
+name: Update data
+
+on:
+  push:
+  schedule:
+  - cron: "*/30 * * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install requests
+        
+    - name: Updating data
+      run: python update_data.py
+      
+    - uses: stefanzweifel/git-auto-commit-action@v4 

@@ -4,19 +4,6 @@ channels:
   - conda-forge
 
 dependencies:
-  - beautifulsoup4
-  - html5lib
-  - jupyterlab
-  - lxml
-  - matplotlib
-  - pandas
-  - pip
-  - python-dotenv
   - python=3.7
-  - seaborn
-  - xmltodict
-
-  - pip:
-      - feautils
-      - ipypb
+  - jupyterlab
 
